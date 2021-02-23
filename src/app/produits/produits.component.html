@@ -1,1 +1,20 @@
-<p>produits works! </p>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow mb-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Liste des produits</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let produit of produits">
+                        <tr>
+                            <td>{{ produit}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
