@@ -2,15 +2,21 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card shadow mb-4">
-                <table class="table table-bordered">
-                    <thead>
+                <table class="table table-bordered table-striped">
+                    <thead class="bg-info">
                         <tr>
-                            <th>Liste des produits</th>
+                            <th>id</th>
+                            <th>Nom du produit</th>
+                            <th>Prix de produit</th>
+                            <th>Date de creation du produit</th>
                         </tr>
                     </thead>
                     <tbody *ngFor="let produit of produits">
                         <tr>
-                            <td>{{ produit}}</td>
+                            <td>{{ produit.idProduit}}</td>
+                            <td>{{ produit.nomProduit}}</td>
+                            <td>{{ produit.prixProduit}}</td>
+                            <td>{{ produit.dateCreation | date:'dd/MM/yyyy'}}</td>
                         </tr>
                     </tbody>
                 </table>
