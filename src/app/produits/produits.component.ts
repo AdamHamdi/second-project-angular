@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Produit } from '../model/produit.model';
 
 @Component({
   selector: 'app-produits',
@@ -6,13 +7,12 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class ProduitsComponent implements OnInit {
-  //Model
-    //data binding1
-  produits: string[];
+
+  produits: Produit[];
     constructor() {
       //data binding2
-      this.produits=["PC Asus","Imprimante Epson","Tablette Samsung"];
-     }
+    //   this.produits=["PC Asus","Imprimante Epson","Tablette Samsung"];
+    }
 
   ngOnInit(): void {
   }
