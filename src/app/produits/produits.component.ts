@@ -10,7 +10,7 @@ import { ProduitService } from './../services/produit.service';
 export class ProduitsComponent implements OnInit {
 
    produits: Produit[];
-   //injection de depondance
+   //injection de depeondance
     constructor( private produitService: ProduitService) {
       this.produits=produitService.listeProduit();
       //data binding2

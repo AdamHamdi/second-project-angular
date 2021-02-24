@@ -9,6 +9,7 @@
                             <th>Nom du produit</th>
                             <th>Prix de produit</th>
                             <th>Date de creation du produit</th>
+                            <th>Acrions</th>
                         </tr>
                     </thead>
                     <tbody *ngFor="let produit of produits">
@@ -17,6 +18,7 @@
                             <td>{{ produit.nomProduit}}</td>
                             <td>{{ produit.prixProduit}}</td>
                             <td>{{ produit.dateCreation | date:'dd/MM/yyyy'}}</td>
+                            <td><a class="btn btn-danger">Supprimer</a></td>
                         </tr>
                     </tbody>
                 </table>

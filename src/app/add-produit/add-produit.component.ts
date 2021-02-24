@@ -9,6 +9,8 @@ import { ProduitService } from './../services/produit.service';
 })
 export class AddProduitComponent implements OnInit {
  newProduit = new Produit();
+
+ message :string;
   constructor( private produitService: ProduitService) {
 
 
@@ -19,6 +21,8 @@ export class AddProduitComponent implements OnInit {
   addProduit(){
     //console.log(this.newProduit);
     this.produitService.ajouterProduit(this.newProduit);
+    // message de comfirmation
+    this.message="Produit " + this.newProduit.nomProduit + " ajouté avec succes";
   }
 
 }
