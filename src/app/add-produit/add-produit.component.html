@@ -8,23 +8,25 @@
 
                 <div class="card-body">
                     <form>
-                        <div class=" form-group col-sm-2 col-md-2 col-lg-2">
+                        <div class="  col-sm-3 col-md-3 col-lg-3">
                             <label for="">Id Produit</label>
                             <input type="number" [(ngModel)]="newProduit.idProduit" name="idProduit" class="form-control">
                         </div>
-                        <div class=" form-group col-sm-4 col-md-4 col-lg-4">
+                        <div class="  col-sm-4 col-md-4 col-lg-4">
                             <label for="">Nom Produit</label>
                             <input type="text" [(ngModel)]="newProduit.nomProduit" name="nomProduit" class="form-control">
                         </div>
-                        <div class=" form-group col-sm-2 col-md-2 col-lg-2">
+                        <div class="  col-sm-3 col-md-3 col-lg-3">
                             <label for="">Prix du Produit</label>
                             <input type="number" [(ngModel)]="newProduit.prixProduit" name="prixProduit" class="form-control">
                         </div>
-                        <div class=" form-group col-sm-4 col-md-4 col-lg-4">
+                        <div class="  col-sm-4 col-md-4 col-lg-4">
                             <label for="">Date de creation de Produit</label>
                             <input type="date" [(ngModel)]="newProduit.dateCreation" name="dateCreation" class="form-control">
                         </div>
-                        <a href="" class="btn btn-success " type="submit" (click)="addProduit()"> Ajouter</a>
+                        <div class=" form-group mt-3 ml-3">
+                            <a href="" class="btn btn-success " type="submit" (click)="addProduit()"> Ajouter</a>
+                        </div>
                     </form>
                 </div>
             </div>

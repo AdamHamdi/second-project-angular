@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Produit } from './../model/produit.model';
+import { ProduitService } from './../services/produit.service';
 
 @Component({
   selector: 'app-produits',
@@ -8,15 +9,17 @@ import { Produit } from './../model/produit.model';
 })
 export class ProduitsComponent implements OnInit {
 
-  produits: Produit[];
-    constructor() {
+   produits: Produit[];
+   //injection de depondance
+    constructor( private produitService: ProduitService) {
+      this.produits=produitService.listeProduit();
       //data binding2
-       this.produits=[
-         //notation json
-         {idProduit:1, nomProduit:"PC Asus",prixProduit:3000.600,dateCreation:new Date("01/14/2010")},
-         {idProduit:2, nomProduit:"Imprimante Epson",prixProduit:450, dateCreation:new Date("12/17/2010")},
-         {idProduit:3, nomProduit:"Tablette Samsung",prixProduit:900.123,dateCreation:new Date("02/20/2010")},
-       ];
+      //  this.produits=[
+      //    //notation json
+      //    {idProduit:1, nomProduit:"PC Asus",prixProduit:3000.600,dateCreation:new Date("01/14/2010")},
+      //    {idProduit:2, nomProduit:"Imprimante Epson",prixProduit:450, dateCreation:new Date("12/17/2010")},
+      //    {idProduit:3, nomProduit:"Tablette Samsung",prixProduit:900.123,dateCreation:new Date("02/20/2010")},
+      //  ];
     }
 
   ngOnInit(): void {
