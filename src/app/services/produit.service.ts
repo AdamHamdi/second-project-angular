@@ -29,6 +29,10 @@ export class ProduitService {
      if (index > -1) { this.produits.splice(index, 1); }
    }
    consulterProduit(id:number): Produit{
-      this.produit = this.produits.find(p => p.idProduit == id);
-       return this.produit; }
+     return  this.produit = this.produits.find(p => p.idProduit == id);
+       //return this.produit;
+      }
+      updateProduit(p:Produit) {
+        // console.log(p); this.supprimerProduit(p);
+         this.ajouterProduit(p); }
 }
