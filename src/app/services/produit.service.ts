@@ -32,7 +32,22 @@ export class ProduitService {
      return  this.produit = this.produits.find(p => p.idProduit == id);
        //return this.produit;
       }
-      updateProduit(p:Produit) {
-        // console.log(p); this.supprimerProduit(p);
-         this.ajouterProduit(p); }
+   updateProduit(p:Produit) {
+        // console.log(p);
+        this.supprimerProduit(p);
+         this.ajouterProduit(p);
+         this.trierProduits();
+        }
+        //cette methode est pour  trier les element du tableau
+  trierProduits(){
+    this.produits = this.produits.sort((n1,n2) => {
+       if (n1.idProduit > n2.idProduit) {
+          return 1;
+        }
+        if (n1.idProduit < n2.idProduit) {
+          return -1;
+        }
+         return 0;
+        });
+      }
 }
