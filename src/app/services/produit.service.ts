@@ -27,13 +27,17 @@ export class ProduitService {
    listeProduit(): Observable<Produit[]>{
       return this.http.get<Produit[]>(this.apiURL);
      }
-
+//liste des produits sans api
   //  listeProduit():Produit[]{
   //    return this.produits
   //  }
-   ajouterProduit(prod:Produit){
-     this.produits.push(prod);
+  ajouterProduit( prod: Produit):Observable<Produit>{
+    return this.http.post<Produit>(this.apiURL, prod, httpOptions);
    }
+  //ajouter sans api
+  //  ajouterProduit(prod:Produit){
+  //    this.produits.push(prod);
+  //  }
    supprimerProduit(prod: Produit){
      //supprimer le produit prod du tableau produits
      const index = this.produits.indexOf(prod, 0);

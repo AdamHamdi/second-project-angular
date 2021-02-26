@@ -19,13 +19,20 @@ export class AddProduitComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addProduit(){
-    //console.log(this.newProduit);
-    this.produitService.ajouterProduit(this.newProduit);
-    //retirect vers la route "produits"
-    this.router.navigate(["produits"]);
-    // message de comfirmation
-    this.message="Produit " + this.newProduit.nomProduit + " ajouté avec succes";
-  }
+  //ajouter produit sans api
+  // addProduit(){
+  //   //console.log(this.newProduit);
+  //   this.produitService.ajouterProduit(this.newProduit);
+  //   //retirect vers la route "produits"
+  //   this.router.navigate(["produits"]);
+  //   // message de comfirmation
+  //   this.message="Produit " + this.newProduit.nomProduit + " ajouté avec succes";
+  // }
+  // ajouter produit avec Api
+  addProduit(){ this.produitService.ajouterProduit(this.newProduit)
+     .subscribe(prod => {
+       console.log(prod);
+      });
+       this.router.navigate(['produits']); }
 
 }
