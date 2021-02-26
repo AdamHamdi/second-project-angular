@@ -12,7 +12,7 @@ export class ProduitsComponent implements OnInit {
    produits: Produit[];
    //injection de depeondance
     constructor( private produitService: ProduitService) {
-      this.produits=produitService.listeProduit();
+      //this.produits=produitService.listeProduit();
       //data binding2
       //  this.produits=[
       //    //notation json
@@ -23,6 +23,9 @@ export class ProduitsComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.produitService.listeProduit().subscribe(prods => {
+       console.log(prods); this.produits = prods;
+      });
   }
   supprimerProduit(p: Produit) {
      //console.log(p);
