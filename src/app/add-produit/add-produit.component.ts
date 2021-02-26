@@ -29,10 +29,13 @@ export class AddProduitComponent implements OnInit {
   //   this.message="Produit " + this.newProduit.nomProduit + " ajouté avec succes";
   // }
   // ajouter produit avec Api
-  addProduit(){ this.produitService.ajouterProduit(this.newProduit)
-     .subscribe(prod => {
+  addProduit(){ this.produitService.ajouterProduit(this.newProduit).subscribe(prod => {
        console.log(prod);
       });
-       this.router.navigate(['produits']); }
+      //retour à la route produit et reload la page
+       this.router.navigate(['produits']).then(()=>{
+         window.location.reload();
+       });
+      }
 
 }
