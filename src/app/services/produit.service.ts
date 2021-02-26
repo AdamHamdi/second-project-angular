@@ -38,21 +38,37 @@ export class ProduitService {
   //  ajouterProduit(prod:Produit){
   //    this.produits.push(prod);
   //  }
-   supprimerProduit(prod: Produit){
-     //supprimer le produit prod du tableau produits
-     const index = this.produits.indexOf(prod, 0);
-     if (index > -1) { this.produits.splice(index, 1); }
-   }
-   consulterProduit(id:number): Produit{
-     return  this.produit = this.produits.find(p => p.idProduit == id);
-       //return this.produit;
-      }
-   updateProduit(p:Produit) {
-        // console.log(p);
-        this.supprimerProduit(p);
-         this.ajouterProduit(p);
-         this.trierProduits();
-        }
+  supprimerProduit(id : number) {
+    const url = `${this.apiURL}/${id}`;
+    return this.http.delete(url, httpOptions);
+  }
+
+  // en local et sans api
+
+  //  supprimerProduit(prod: Produit){
+  //    //supprimer le produit prod du tableau produits
+  //    const index = this.produits.indexOf(prod, 0);
+  //    if (index > -1) { this.produits.splice(index, 1); }
+  //  }
+  // sans api
+  //  consulterProduit(id:number): Produit{
+  //    return  this.produit = this.produits.find(p => p.idProduit == id);
+  //      //return this.produit;
+  //     }
+
+  //avec api
+  consulterProduit(id: number): Observable<Produit> {
+    const url = `${this.apiURL}/${id}`;
+    return this.http.get<Produit>(url); }
+    updateProduit(p:Produit) {
+      // avec api
+      return this.http.put<Produit>(this.apiURL, p, httpOptions);
+// sans api
+  //       // console.log(p);
+  //       this.supprimerProduit(p);
+  //        this.ajouterProduit(p);
+  //        this.trierProduits();
+         }
         //cette methode est pour  trier les element du tableau
   trierProduits(){
     this.produits = this.produits.sort((n1,n2) => {

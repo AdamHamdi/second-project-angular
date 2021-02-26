@@ -31,6 +31,7 @@ export class AddProduitComponent implements OnInit {
   // ajouter produit avec Api
   addProduit(){ this.produitService.ajouterProduit(this.newProduit).subscribe(prod => {
        console.log(prod);
+     
       });
       //retour à la route produit et reload la page
        this.router.navigate(['produits']).then(()=>{
