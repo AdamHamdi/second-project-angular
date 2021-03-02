@@ -9,6 +9,7 @@ import { ProduitsComponent } from './produits/produits.component';
 import { AddProduitComponent } from './add-produit/add-produit.component';
 import { UpdateProduitComponent } from './update-produit/update-produit.component';
 import { LoginComponent } from './login/login.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoginComponent } from './login/login.component';
     ProduitsComponent,
     AddProduitComponent,
     UpdateProduitComponent,
-    LoginComponent
+    LoginComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

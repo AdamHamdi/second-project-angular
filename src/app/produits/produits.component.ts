@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Produit } from './../model/produit.model';
 import { ProduitService } from './../services/produit.service';
 import { Router } from '@angular/router';
+import { AuthService } from './../services/auth.service';
 
 @Component({
   selector: 'app-produits',
@@ -12,7 +13,7 @@ export class ProduitsComponent implements OnInit {
 
    produits: Produit[];
    //injection de depeondance
-    constructor( private produitService: ProduitService, private router:Router) {
+    constructor( private produitService: ProduitService, private router:Router,public authService: AuthService) {
       //this.produits=produitService.listeProduit();
       //data binding2
       //  this.produits=[

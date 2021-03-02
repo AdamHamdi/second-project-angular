@@ -19,8 +19,8 @@
                             <td>{{ produit.prixProduit}}</td>
                             <td>{{ produit.dateCreation | date:'dd/MM/yyyy'}}</td>
                             <td>
-                                <a class="btn btn-danger" (click)="supprimerProduit(produit)">Supprimer</a>
-                                <a class="btn btn-warning ml-2" [routerLink]="['/updateProduit',produit.idProduit]">Modifier</a>
+                                <a class="btn btn-danger" *ngIf="authService.isAdmin()" (click)="supprimerProduit(produit)">Supprimer</a>
+                                <a class="btn btn-warning ml-2" *ngIf="authService.isAdmin()" [routerLink]="['/updateProduit',produit.idProduit]">Modifier</a>
                             </td>
                         </tr>
                     </tbody>

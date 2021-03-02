@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from './../model/user.model';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class AuthService {
     public isloggedIn: Boolean = false;
     public roles:string[];
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   SignIn(user :User):Boolean{
      let validUser: Boolean = false;
@@ -29,4 +30,19 @@ export class AuthService {
         });
          return validUser;
          }
+         isAdmin():Boolean{
+          if (!this.roles) //this.roles== undefiened
+          return false;
+          return (this.roles.indexOf('ADMIN') >-1)  ;
+
+         }
+         logout() {
+           this.isloggedIn= false;
+            this.loggedUser = undefined;
+            this.roles = undefined;
+             localStorage.removeItem('loggedUser');
+            localStorage.setItem('isloggedIn',String(this.isloggedIn));
+            this.router.navigate(['/login']);
+            
+          }
 }
